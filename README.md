@@ -9,19 +9,9 @@ you can upload anywhere.
 Every placeholder is wrapped in square brackets so you can find them quickly.
 Search the file for `[` and work through the list:
 
-Still outstanding — these five are the only bracketed items left in the file:
-
-| Where | Placeholder |
-|---|---|
-| Trust strip (under hero) | `[Licence / association no.]` |
-| Trust strip (under hero) | `[X] years guiding in East Africa` |
-| Enquiries block | `[Your phone number]` |
-| Enquiries block | `[Office address / city]` |
-| Footer | `[Company registration / licence details]` |
-
-Already filled in: all three itinerary cards (names, durations, regions, prices),
-the 24-working-hour response time, the enquiries address, and the four
-"why travel with us" paragraphs.
+No placeholders remain. Every bracket has been replaced with client-supplied detail:
+itineraries and prices, response time, enquiries address, phone, office address,
+years operating, tour operator licence and company registration.
 
 The trust strip also carries the line "Private guide on every departure", and the
 four "why travel with us" paragraphs are my draft wording based on what you have
