@@ -161,6 +161,10 @@
   select option{color:#20180f}
   textarea{resize:vertical;min-height:104px}
   .form-note{font-size:.82rem;color:rgba(255,255,255,.55);margin:.2rem 0 0}
+  .form-note.ok{color:#9fe0a8}
+  .form-note.err{color:#ffb3a7}
+  .hp{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  button[disabled]{opacity:.6;cursor:not-allowed}
   form .btn-primary{width:100%;justify-content:center;margin-top:.4rem}
 
   /* ---------- footer ---------- */
@@ -472,8 +476,13 @@
         <label for="message">Anything else we should know</label>
         <textarea id="message" name="message" placeholder="Budget range, must-see parks, mobility needs, dietary requirements…"></textarea>
       </div>
-      <button class="btn btn-primary" type="submit">Send enquiry</button>
-      <p class="form-note">We reply personally — your details are never sold or shared.</p>
+      <!-- Anti-spam honeypot: hidden from people, filled in by bots. -->
+      <div class="hp" aria-hidden="true">
+        <label for="website">Website</label>
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <button class="btn btn-primary" type="submit" id="submit-btn">Send enquiry</button>
+      <p class="form-note" id="form-status">We reply personally — your details are never sold or shared.</p>
     </form>
   </div>
 </section>
@@ -510,10 +519,56 @@
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
 
-  // Enquiry form is not wired to a backend yet — see README.
-  document.getElementById('enquiry-form').addEventListener('submit', function (e) {
+  // ---------------------------------------------------------------------
+  // Paste your enquiry Worker's URL here, e.g.
+  // https://maajabu-enquiry.lindadirk13.workers.dev
+  const ENQUIRY_ENDPOINT = 'PASTE_YOUR_WORKER_URL_HERE';
+  // ---------------------------------------------------------------------
+
+  const form = document.getElementById('enquiry-form');
+  const statusEl = document.getElementById('form-status');
+  const submitBtn = document.getElementById('submit-btn');
+  const DEFAULT_NOTE = statusEl.textContent;
+
+  function setStatus(text, kind) {
+    statusEl.textContent = text;
+    statusEl.className = 'form-note' + (kind ? ' ' + kind : '');
+  }
+
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
-    alert('Form endpoint not connected yet. This will send through Amazon SES once the domain is authenticated.');
+
+    if (ENQUIRY_ENDPOINT.startsWith('PASTE_')) {
+      setStatus('The form is not connected yet — please call or email us instead.', 'err');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    setStatus('Sending…');
+
+    try {
+      const res = await fetch(ENQUIRY_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(form).entries())),
+      });
+      const data = await res.json().catch(() => ({}));
+
+      if (res.ok && data.ok) {
+        form.reset();
+        setStatus('Thank you — your enquiry is with us. We reply within 24 working hours.', 'ok');
+      } else {
+        setStatus(data.error || 'Something went wrong. Please email us directly.', 'err');
+        submitBtn.disabled = false;
+      }
+    } catch (err) {
+      setStatus('Could not reach us just now. Please email or call instead.', 'err');
+      submitBtn.disabled = false;
+    }
+  });
+
+  form.addEventListener('input', function () {
+    if (statusEl.className !== 'form-note') setStatus(DEFAULT_NOTE);
   });
 </script>
 
