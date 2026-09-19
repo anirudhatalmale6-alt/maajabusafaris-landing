@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maajabu Safaris — Tailor-made East African Safaris</title>
+<meta name="description" content="Maajabu Safaris designs private, tailor-made safaris across East Africa. Speak to a real guide and travel on an itinerary built around you.">
+<meta property="og:title" content="Maajabu Safaris — Tailor-made East African Safaris">
+<meta property="og:description" content="Private, tailor-made safaris across East Africa, planned with you from the first enquiry.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://maajabusafaris.com/">
+<link rel="canonical" href="https://maajabusafaris.com/">
+<style>
+  :root{
+    --ink:#20180f;
+    --ink-soft:#544636;
+    --cream:#faf4ea;
+    --cream-2:#f2e7d6;
+    --ochre:#c0682a;
+    --ochre-dark:#9c4f1c;
+    --gold:#d9a441;
+    --green:#2f4a35;
+    --line:rgba(32,24,15,.14);
+    --shadow:0 1px 2px rgba(32,24,15,.06),0 8px 28px -12px rgba(32,24,15,.22);
+    --max:1140px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-weight:600;letter-spacing:-.01em;line-height:1.14}
+  h1{font-size:clamp(2.4rem,5.4vw,4rem);margin:0 0 .5em}
+  h2{font-size:clamp(1.75rem,3.2vw,2.5rem);margin:0 0 .55em}
+  h3{font-size:1.2rem;margin:0 0 .4em;line-height:1.3}
+  p{margin:0 0 1em}
+  a{color:inherit}
+  img,svg{max-width:100%;display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+  .eyebrow{
+    font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;
+    font-weight:700;color:var(--ochre);margin:0 0 1.1em;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  }
+  .lede{font-size:1.1rem;color:var(--ink-soft);max-width:60ch}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:.55em;
+    padding:.85em 1.6em;border-radius:999px;
+    font-weight:600;font-size:.97rem;text-decoration:none;
+    border:1.5px solid transparent;transition:transform .15s ease,background .15s ease,border-color .15s ease;
+    cursor:pointer;
+  }
+  .btn:hover{transform:translateY(-1px)}
+  .btn-primary{background:var(--ochre);color:#fff}
+  .btn-primary:hover{background:var(--ochre-dark)}
+  .btn-ghost{border-color:rgba(250,244,234,.5);color:#fff}
+  .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+  .btn-dark{background:var(--ink);color:var(--cream)}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,244,234,.86);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding-top:.9rem;padding-bottom:.9rem}
+  .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:Georgia,serif;font-weight:600;font-size:1.22rem;letter-spacing:-.01em}
+  .brand .mark{width:34px;height:34px;flex:0 0 34px}
+  .nav-links{display:flex;align-items:center;gap:1.7rem;font-size:.94rem}
+  .nav-links a{text-decoration:none;color:var(--ink-soft);font-weight:500}
+  .nav-links a:hover{color:var(--ochre)}
+  .nav .btn{padding:.6em 1.25em;font-size:.9rem}
+  @media(max-width:860px){.nav-links a:not(.btn){display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;background:var(--ink);color:#fff;isolation:isolate}
+  .hero-scene{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+  .hero-scene svg{width:100%;height:100%;object-fit:cover}
+  .hero-inner{padding-top:clamp(5rem,13vw,9.5rem);padding-bottom:clamp(4rem,9vw,7rem);max-width:39rem}
+  .hero h1{color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.35)}
+  .hero .lede{color:rgba(255,255,255,.88);font-size:1.16rem;margin-bottom:2em;text-shadow:0 1px 12px rgba(0,0,0,.35)}
+  .hero-eyebrow{color:var(--gold)}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:.8rem}
+
+  /* ---------- strip ---------- */
+  .strip{background:var(--ink);color:rgba(255,255,255,.78);border-top:1px solid rgba(255,255,255,.12)}
+  .strip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.4rem 2rem;padding-top:1.6rem;padding-bottom:1.6rem}
+  .strip-item{display:flex;align-items:center;gap:.7rem;font-size:.92rem}
+  .strip-item svg{flex:0 0 22px;color:var(--gold)}
+
+  /* ---------- sections ---------- */
+  section{padding:clamp(3.8rem,8vw,6.5rem) 0}
+  .section-head{max-width:38rem;margin-bottom:3rem}
+  .alt{background:var(--cream-2)}
+
+  /* ---------- cards ---------- */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.6rem}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    box-shadow:var(--shadow);display:flex;flex-direction:column;
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:0 2px 4px rgba(32,24,15,.07),0 18px 40px -16px rgba(32,24,15,.3)}
+  .card-art{height:168px;position:relative}
+  .card-art svg{width:100%;height:100%}
+  .card-body{padding:1.5rem 1.5rem 1.7rem;display:flex;flex-direction:column;flex:1}
+  .card-meta{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ochre);font-weight:700;margin-bottom:.5rem}
+  .card p{color:var(--ink-soft);font-size:.96rem;flex:1}
+  .card-foot{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-top:1.1rem;padding-top:1.1rem;border-top:1px solid var(--line)}
+  .price{font-family:Georgia,serif;font-size:1.22rem;font-weight:600}
+  .price small{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;font-family:-apple-system,sans-serif}
+  .card-foot a{font-size:.9rem;font-weight:600;color:var(--ochre);text-decoration:none}
+  .card-foot a:hover{text-decoration:underline}
+
+  /* ---------- feature list ---------- */
+  .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:2.2rem 2.4rem}
+  .feature svg{color:var(--green);margin-bottom:.9rem}
+  .feature p{color:var(--ink-soft);font-size:.96rem;margin:0}
+
+  /* ---------- steps ---------- */
+  .steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem}
+  .step{position:relative;padding-top:3.4rem}
+  .step::before{
+    counter-increment:s;content:counter(s);
+    position:absolute;top:0;left:0;
+    width:2.6rem;height:2.6rem;border-radius:50%;
+    background:var(--ochre);color:#fff;
+    font-family:Georgia,serif;font-size:1.2rem;font-weight:600;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .step p{color:var(--ink-soft);font-size:.96rem;margin:0}
+
+  /* ---------- enquiry ---------- */
+  .enquire{background:var(--ink);color:#fff}
+  .enquire h2{color:#fff}
+  .enquire .lede{color:rgba(255,255,255,.8)}
+  .enquire-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(2.5rem,6vw,5rem);align-items:start}
+  @media(max-width:860px){.enquire-grid{grid-template-columns:1fr}}
+  .contact-list{list-style:none;padding:0;margin:2rem 0 0;font-size:.97rem}
+  .contact-list li{display:flex;gap:.8rem;align-items:flex-start;margin-bottom:1.1rem;color:rgba(255,255,255,.85)}
+  .contact-list svg{flex:0 0 20px;margin-top:.22em;color:var(--gold)}
+  form{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:clamp(1.5rem,3.5vw,2.2rem)}
+  .field{margin-bottom:1.1rem}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+  @media(max-width:520px){.row2{grid-template-columns:1fr}}
+  label{display:block;font-size:.83rem;font-weight:600;letter-spacing:.03em;margin-bottom:.45em;color:rgba(255,255,255,.9)}
+  input,select,textarea{
+    width:100%;padding:.78em .9em;font:inherit;font-size:.95rem;color:#fff;
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:9px;
+  }
+  input::placeholder,textarea::placeholder{color:rgba(255,255,255,.42)}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);outline-offset:1px;background:rgba(255,255,255,.12)}
+  select option{color:#20180f}
+  textarea{resize:vertical;min-height:104px}
+  .form-note{font-size:.82rem;color:rgba(255,255,255,.55);margin:.2rem 0 0}
+  form .btn-primary{width:100%;justify-content:center;margin-top:.4rem}
+
+  /* ---------- footer ---------- */
+  footer{background:#170f08;color:rgba(255,255,255,.62);font-size:.9rem;padding:3rem 0 2.2rem}
+  .foot-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:flex-start;margin-bottom:2.2rem}
+  .foot-links{display:flex;gap:1.6rem;flex-wrap:wrap}
+  .foot-links a{text-decoration:none}
+  .foot-links a:hover{color:var(--gold)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:1.5rem;display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;font-size:.84rem;color:rgba(255,255,255,.45)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#c0682a"/>
+        <circle cx="20" cy="16.5" r="6.2" fill="#d9a441"/>
+        <path d="M4 31c4.2-5.6 8-8.4 11.4-8.4 3.4 0 5 2.6 8.3 2.6 2.6 0 4.7-1.7 7.1-4.6L36 31H4z" fill="#2f4a35"/>
+        <path d="M20 39A19 19 0 0 1 4 31h32a19 19 0 0 1-16 8z" fill="#20180f" opacity=".9"/>
+      </svg>
+      Maajabu Safaris
+    </a>
+    <nav class="nav-links">
+      <a href="#safaris">Safaris</a>
+      <a href="#why">Why us</a>
+      <a href="#how">How it works</a>
+      <a class="btn btn-primary" href="#enquire">Plan your trip</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="hero-scene" aria-hidden="true">
+    <svg viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#2a1a10"/>
+          <stop offset="42%" stop-color="#7a3a17"/>
+          <stop offset="72%" stop-color="#c0682a"/>
+          <stop offset="100%" stop-color="#e2a253"/>
+        </linearGradient>
+        <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ffd98a" stop-opacity=".85"/>
+          <stop offset="100%" stop-color="#ffd98a" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="veil" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#20180f" stop-opacity=".9"/>
+          <stop offset="52%" stop-color="#20180f" stop-opacity=".4"/>
+          <stop offset="100%" stop-color="#20180f" stop-opacity=".04"/>
+        </linearGradient>
+      </defs>
+
+      <rect width="1440" height="760" fill="url(#sky)"/>
+      <circle cx="1075" cy="470" r="300" fill="url(#sunGlow)"/>
+      <circle cx="1075" cy="470" r="96" fill="#ffd98a" opacity=".95"/>
+
+      <!-- distant hills -->
+      <path d="M0 545c150-52 250-30 360 8s215 44 330 4 250-58 400-16 250 30 350 6v209H0z" fill="#8a4a20" opacity=".55"/>
+      <path d="M0 596c180-40 300-6 430 22s250 24 380-10 300-40 430-4 120 22 200 14v142H0z" fill="#5e2f14" opacity=".75"/>
+
+      <!-- foreground ground -->
+      <path d="M0 668c220-34 420 12 640 22s420-26 640-40c60-4 120-2 160 2v108H0z" fill="#20180f"/>
+
+      <!-- grass tufts -->
+      <g fill="#20180f">
+        <path d="M120 672c6 16 2 30-4 40 14-8 20-24 18-40zM170 678c8 14 6 28 2 38 12-10 14-26 8-38z"/>
+        <path d="M1290 664c7 15 3 30-3 40 14-9 19-25 17-40z"/>
+      </g>
+
+      <!-- acacia tree -->
+      <g id="acacia" fill="#20180f">
+        <path d="M262 690V566c0-10-16-22-26-36 14 6 22 10 26 16v-28c0-12-22-22-34-38 16 6 28 12 34 20 4-16 14-26 28-34-10 12-16 24-16 36v40c6-10 16-16 30-22-14 12-24 22-30 34v136h-12z"/>
+        <path d="M180 520c26-34 68-52 116-52s88 18 112 50c-22-12-42-18-66-14 20 4 34 10 46 20-30-12-58-14-92-8-36 6-72 4-116 4z"/>
+        <path d="M206 498c30-22 66-32 104-32 34 0 64 8 88 24-32-8-62-10-96-4-34 6-66 8-96 12z"/>
+      </g>
+
+      <!-- distant acacia, same drawing scaled down for depth -->
+      <use href="#acacia" transform="translate(1079,382) scale(0.42)" opacity=".8"/>
+      <use href="#acacia" transform="translate(880,432) scale(0.26)" opacity=".62"/>
+
+      <!-- birds -->
+      <g stroke="#20180f" stroke-width="3" fill="none" opacity=".8">
+        <path d="M430 210c8-8 14-8 20 0 6-8 12-8 20 0"/>
+        <path d="M520 160c6-6 11-6 15 0 5-6 9-6 15 0"/>
+        <path d="M368 268c5-5 9-5 12 0 4-5 7-5 11 0"/>
+      </g>
+
+      <rect width="1440" height="760" fill="url(#veil)"/>
+    </svg>
+  </div>
+
+  <div class="wrap hero-inner">
+    <p class="eyebrow hero-eyebrow">East Africa · Tailor-made journeys</p>
+    <h1>The safari you had in mind, built around you.</h1>
+    <p class="lede">Maajabu Safaris plans private, small-group journeys across East Africa — no fixed coach tours, no rushed itineraries. Tell us how you like to travel and we'll shape the route, the camps and the pace around it.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#enquire">Plan your safari</a>
+      <a class="btn btn-ghost" href="#safaris">See sample itineraries</a>
+    </div>
+  </div>
+</div>
+
+<div class="strip">
+  <div class="wrap strip-grid">
+    <div class="strip-item">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>
+      <span>[Licence / association no.]</span>
+    </div>
+    <div class="strip-item">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z"/></svg>
+      <span>[X] years guiding in East Africa</span>
+    </div>
+    <div class="strip-item">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span>Private guide on every departure</span>
+    </div>
+    <div class="strip-item">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span>Answer within [X] working hours</span>
+    </div>
+  </div>
+</div>
+
+<section id="safaris">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Sample itineraries</p>
+      <h2>Starting points, not fixed packages</h2>
+      <p class="lede">Every journey below is a template we reshape with you — swap a park, add nights, change the season. Prices are per person sharing and depend on camp choice and time of year.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card-art">
+          <svg viewBox="0 0 400 168" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="168" fill="#e8b96b"/>
+            <circle cx="310" cy="52" r="30" fill="#f6dfae"/>
+            <path d="M0 116c60-18 110-6 170 6s130 12 230-8v54H0z" fill="#c0682a"/>
+            <path d="M0 140c80-14 140 4 210 10s130-2 190-12v30H0z" fill="#8a4a20"/>
+            <g fill="#20180f"><path d="M96 152v-30c0-6-10-12-16-20 8 4 13 6 16 10v-16c0-8-14-14-20-24 10 4 17 8 20 12 3-9 9-15 17-20-7 8-11 14-11 22v58h-6z"/><path d="M52 104c16-20 40-30 68-30s52 10 66 28c-14-6-26-10-40-8 12 2 20 6 28 12-18-8-36-8-56-4-22 4-42 2-66 2z"/></g>
+          </svg>
+        </div>
+        <div class="card-body">
+          <p class="card-meta">[X] days · [Region]</p>
+          <h3>[Itinerary name — e.g. Classic Migration]</h3>
+          <p>[Two lines on what this trip is: which parks, what the traveller sees, who it suits. Replace with your own words.]</p>
+          <div class="card-foot">
+            <div class="price">from $[0,000]<small>per person</small></div>
+            <a href="#enquire">Enquire →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-art">
+          <svg viewBox="0 0 400 168" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="168" fill="#a9c4a1"/>
+            <path d="M0 74c70-30 130-30 200-6s130 22 200-8v108H0z" fill="#5e7a52"/>
+            <path d="M0 122c90-20 150 2 230 10s110-6 170-18v54H0z" fill="#2f4a35"/>
+            <circle cx="322" cy="44" r="24" fill="#f6dfae" opacity=".9"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <p class="card-meta">[X] days · [Region]</p>
+          <h3>[Itinerary name — e.g. Family Safari]</h3>
+          <p>[Two lines describing this trip and the kind of traveller it is built for. Replace with your own words.]</p>
+          <div class="card-foot">
+            <div class="price">from $[0,000]<small>per person</small></div>
+            <a href="#enquire">Enquire →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-art">
+          <svg viewBox="0 0 400 168" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="168" fill="#7fa8bf"/>
+            <path d="M0 96c80-40 150-16 220 4s120 8 180-16v84H0z" fill="#3f6d84"/>
+            <path d="M0 132c100-18 160 6 240 12s100-8 160-16v40H0z" fill="#20180f"/>
+            <g fill="#f6dfae" opacity=".9"><circle cx="70" cy="44" r="3"/><circle cx="130" cy="28" r="2.4"/><circle cx="200" cy="52" r="2.6"/><circle cx="268" cy="30" r="3"/><circle cx="330" cy="58" r="2.4"/></g>
+            <circle cx="304" cy="40" r="20" fill="#faf4ea" opacity=".95"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <p class="card-meta">[X] days · [Region]</p>
+          <h3>[Itinerary name — e.g. Safari &amp; Coast]</h3>
+          <p>[Two lines describing this trip and the kind of traveller it is built for. Replace with your own words.]</p>
+          <div class="card-foot">
+            <div class="price">from $[0,000]<small>per person</small></div>
+            <a href="#enquire">Enquire →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Why travel with us</p>
+      <h2>Planned by people who actually go there</h2>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.4-7-10a7 7 0 1 1 14 0c0 5.6-7 10-7 10z"/><circle cx="12" cy="11" r="2.6"/></svg>
+        <h3>Routes we know first-hand</h3>
+        <p>[Say how you choose camps and routes — personal visits, long-standing partners, seasons you avoid. Your words here.]</p>
+      </div>
+      <div class="feature">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+        <h3>One planner, start to finish</h3>
+        <p>[Explain that the person who quotes the trip stays with the client through to return. Your words here.]</p>
+      </div>
+      <div class="feature">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"/></svg>
+        <h3>Clear, itemised pricing</h3>
+        <p>[State what is always included — park fees, transfers, guide — and what is not. Your words here.]</p>
+      </div>
+      <div class="feature">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <h3>Reachable while you travel</h3>
+        <p>[Describe your on-trip support — phone line, WhatsApp, local office hours. Your words here.]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How it works</p>
+      <h2>Three steps to a finished itinerary</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <h3>Tell us the shape of the trip</h3>
+        <p>Dates, how long you have, who's travelling and roughly what you'd like to spend. A rough idea is enough to start.</p>
+      </div>
+      <div class="step">
+        <h3>We send a draft itinerary</h3>
+        <p>A day-by-day route with camps, costs and what's included — sent within [X] working hours, then revised as often as you like.</p>
+      </div>
+      <div class="step">
+        <h3>Confirm and travel</h3>
+        <p>We hold the bookings, handle park fees and transfers, and stay contactable throughout your trip.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="enquire" id="enquire">
+  <div class="wrap enquire-grid">
+    <div>
+      <p class="eyebrow hero-eyebrow">Enquiries</p>
+      <h2>Start planning</h2>
+      <p class="lede">Send a few details and we'll come back with a draft itinerary and an honest price. No deposit needed to get a plan.</p>
+      <ul class="contact-list">
+        <li>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          <span>[Your phone number]</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+          <span>[Your enquiries email address]</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.4-7-10a7 7 0 1 1 14 0c0 5.6-7 10-7 10z"/><circle cx="12" cy="11" r="2.6"/></svg>
+          <span>[Office address / city]</span>
+        </li>
+      </ul>
+    </div>
+
+    <form id="enquiry-form" method="post" action="#">
+      <div class="row2">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" autocomplete="name" placeholder="Jane Doe" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="jane@example.com" required>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="travellers">Travellers</label>
+          <input id="travellers" name="travellers" type="number" min="1" value="2">
+        </div>
+        <div class="field">
+          <label for="dates">Approximate dates</label>
+          <input id="dates" name="dates" type="text" placeholder="July 2027, 8 nights">
+        </div>
+      </div>
+      <div class="field">
+        <label for="interest">What interests you most</label>
+        <select id="interest" name="interest">
+          <option>Not sure yet — advise me</option>
+          <option>Great migration</option>
+          <option>Family safari</option>
+          <option>Safari and coast</option>
+          <option>Photography focus</option>
+          <option>Honeymoon</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="message">Anything else we should know</label>
+        <textarea id="message" name="message" placeholder="Budget range, must-see parks, mobility needs, dietary requirements…"></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit">Send enquiry</button>
+      <p class="form-note">We reply personally — your details are never sold or shared.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top" style="color:#fff">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <circle cx="20" cy="20" r="19" fill="#c0682a"/>
+            <circle cx="20" cy="16.5" r="6.2" fill="#d9a441"/>
+            <path d="M4 31c4.2-5.6 8-8.4 11.4-8.4 3.4 0 5 2.6 8.3 2.6 2.6 0 4.7-1.7 7.1-4.6L36 31H4z" fill="#2f4a35"/>
+            <path d="M20 39A19 19 0 0 1 4 31h32a19 19 0 0 1-16 8z" fill="#20180f" opacity=".9"/>
+          </svg>
+          Maajabu Safaris
+        </a>
+        <p style="max-width:34ch;margin-top:1rem">Tailor-made safaris across East Africa, planned one trip at a time.</p>
+      </div>
+      <div class="foot-links">
+        <a href="#safaris">Safaris</a>
+        <a href="#why">Why us</a>
+        <a href="#how">How it works</a>
+        <a href="#enquire">Enquire</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr">2026</span> Maajabu Safaris. All rights reserved.</span>
+      <span>[Company registration / licence details]</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Enquiry form is not wired to a backend yet — see README.
+  document.getElementById('enquiry-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    alert('Form endpoint not connected yet. This will send through Amazon SES once the domain is authenticated.');
+  });
+</script>
+
+</body>
+</html>
