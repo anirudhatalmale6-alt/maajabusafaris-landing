@@ -9,14 +9,24 @@ you can upload anywhere.
 Every placeholder is wrapped in square brackets so you can find them quickly.
 Search the file for `[` and work through the list:
 
+Still outstanding — these five are the only bracketed items left in the file:
+
 | Where | Placeholder |
 |---|---|
-| Trust strip (under hero) | `[Licence / association no.]`, `[X] years guiding in East Africa`, `Answer within [X] working hours` |
-| Itinerary cards ×3 | `[X] days · [Region]`, `[Itinerary name …]`, description line, `from $[0,000]` |
-| Why travel with us ×4 | the four description paragraphs |
-| How it works, step 2 | `[X] working hours` |
-| Enquiries block | `[Your phone number]`, `[Your enquiries email address]`, `[Office address / city]` |
+| Trust strip (under hero) | `[Licence / association no.]` |
+| Trust strip (under hero) | `[X] years guiding in East Africa` |
+| Enquiries block | `[Your phone number]` |
+| Enquiries block | `[Office address / city]` |
 | Footer | `[Company registration / licence details]` |
+
+Already filled in: all three itinerary cards (names, durations, regions, prices),
+the 24-working-hour response time, the enquiries address, and the four
+"why travel with us" paragraphs.
+
+The trust strip also carries the line "Private guide on every departure", and the
+four "why travel with us" paragraphs are my draft wording based on what you have
+described. Read them and correct anything that is not accurate about how you
+actually operate — they are claims made in your name, so they need to be true.
 
 Nothing in the page claims a fact about the business that has not been left as a
 placeholder — no invented licence numbers, no invented testimonials, no invented
