@@ -26,10 +26,10 @@ const MAIL_TO  = 'account@maajabusafaris.com';   // where enquiries land
 const MAIL_FROM = 'account@maajabusafaris.com';  // must be on the verified domain
 const ALLOW_ORIGIN = 'https://maajabusafaris.com';
 
-// Auto-acknowledgement to the traveller. Leave false while the account is in
-// the SES sandbox - sandbox only permits sending to verified addresses, so
-// this would fail. Set to true once production access is granted.
-const SEND_ACKNOWLEDGEMENT = false;
+// Auto-acknowledgement to the traveller. Enabled 20 Sep 2026, when SES
+// production access was granted - in sandbox this would have failed, because
+// sandbox only permits sending to verified addresses.
+const SEND_ACKNOWLEDGEMENT = true;
 
 export default {
   async fetch(request, env) {
